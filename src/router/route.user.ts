@@ -41,7 +41,7 @@ userRoute.post("/", (request, response) => {
   console.log(`---> Recebeu:\n ${JSON.stringify(user, null, 2)}`);
 
 
-  //database.insert(table, user);
+  database.insert(table, user);
 
   response.status(201).json({ msg: "sucesso!" });
 });
