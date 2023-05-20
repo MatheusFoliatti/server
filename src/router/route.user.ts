@@ -34,11 +34,14 @@ userRoute.post("/", (request, response) => {
 
   const user = {
     id: randomUUID(),
-    name: name,
+    name,
     email,
   };
 
-  database.insert(table, user);
+  console.log(`---> Recebeu:\n ${JSON.stringify(user, null, 2)}`);
+
+
+  //database.insert(table, user);
 
   response.status(201).json({ msg: "sucesso!" });
 });
@@ -70,7 +73,7 @@ userRoute.put("/:id", (request, response) => {
 
   database.update(table, id, { name, email });
 
-  response.status(201).json({ msg: `O ID: {${id}} foi alterado banco` });
+  response.status(201).json({ msg: `O ID: {${id} } foi alterado banco` });
 });
 
 export { userRoute };

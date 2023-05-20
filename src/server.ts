@@ -7,10 +7,10 @@ const server = express();
 const port = 3333;
 
 server.use(cors());
+server.use(express.json());
 
 server.use(router);
 
 server.listen(port, () => {
-  console.log(`Server Running - end: http://localhost:${port}`);
+  console.log(`Server Running - end: http://localhost:${port}`)
 });
-npm i --save-dev @types/cors
